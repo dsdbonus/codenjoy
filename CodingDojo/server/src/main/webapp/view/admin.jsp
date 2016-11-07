@@ -160,28 +160,6 @@
         </table>
     </form:form>
 
-    <c:if test="${parameters.size() != 0}">
-        <form:form commandName="adminSettings" action="admin31415" method="POST">
-            <table class="admin-table" id="gameSettings">
-                <tr colspan="2">
-                    <td><b>Game settings</b></td>
-                </tr>
-                <c:forEach items="${parameters}" var="parameter" varStatus="status">
-                    <tr>
-                        <td>${parameter.name}</td>
-                        <td><form:input path="parameters[${status.index}]"/></td>
-                    </tr>
-                </c:forEach>
-                <tr>
-                    <td>
-                        <input type="hidden" name="gameName" value="${gameName}"/>
-                        <input type="submit" value="Save"/>
-                    </td>
-                </tr>
-            </table>
-        </form:form>
-    </c:if>
-
     <c:if test="${players != null || savedGames != null}">
         <form:form commandName="adminSettings" action="admin31415" method="POST">
             <table class="admin-table" id="savePlayersGame">
